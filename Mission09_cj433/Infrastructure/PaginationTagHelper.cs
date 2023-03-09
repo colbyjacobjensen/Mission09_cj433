@@ -25,8 +25,8 @@ namespace Mission09_cj433.Infrastructure
         public PageInfo PageLinks { get; set; }
         public string PageAction { get; set; }
         // Added for styling
-        public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
+        public bool PageClassesEnabled { get; set; }
         public string PageClassNormal { get; set; }
         public string PageClassSelected { get; set; }
 
@@ -46,8 +46,7 @@ namespace Mission09_cj433.Infrastructure
                 if (PageClassesEnabled)
                 {
                     tb.AddCssClass(PageClass);
-                    tb.AddCssClass(i == PageLinks.CurrentPage
-                        ? PageClassSelected : PageClassNormal);
+                    tb.AddCssClass(i == PageLinks.CurrentPage ? PageClassSelected : PageClassNormal);
                 }
 
                 tb.InnerHtml.Append(i.ToString());
