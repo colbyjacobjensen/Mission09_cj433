@@ -19,10 +19,12 @@
     <tbody>
         @foreach (var b in Model.basket.Items)
         {
-            <tr>@b.Book.Title</tr>
-            <tr>@b.Quantity</tr>
-            <tr>@b.Book.Price</tr>
-            <tr>(@b.Book.Price * @b.Quantity)</tr>
+        <tr>
+            <td>@b.Book.Title</td>
+            <td>@b.Quantity</td>
+            <td>$@b.Book.Price</td>
+            <td>$@(b.Book.Price * @b.Quantity)</td>
+        </tr>
         }
     </tbody>
 
@@ -34,3 +36,7 @@
     </tfoot>
 
 </table>
+
+<div>
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue Shopping</a>
+</div>
