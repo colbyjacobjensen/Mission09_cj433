@@ -19,12 +19,20 @@
     <tbody>
         @foreach (var b in Model.basket.Items)
         {
-        <tr>
-            <td>@b.Book.Title</td>
-            <td>@b.Quantity</td>
-            <td>$@b.Book.Price</td>
-            <td>$@(b.Book.Price * @b.Quantity)</td>
-        </tr>
+            <tr>
+                <td>@b.Book.Title</td>
+                <td>@b.Quantity</td>
+                <td>@b.Book.Price.ToString("c")</td>
+                <td>@((b.Book.Price * @b.Quantity).ToString("c"))</td>
+
+                <td class="text-center">
+                    <form method="post" asp-page-handler="Remove">
+                        <input type="hidden" name="bookId" value="@b.Book.BookId" />
+                        <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+                        <button tyype="submit" class="btn btn-sm btn-danger">Remove</button>
+                    </form>
+                </td>
+            </tr>
         }
     </tbody>
 
