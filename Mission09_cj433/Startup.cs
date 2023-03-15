@@ -34,6 +34,7 @@ namespace Mission09_cj433
             });
 
             services.AddScoped<IBookstoreRepository, EFBookstoreRepository>(); // Repository method
+            services.AddScoped<IOrderRepository, EFOrderRepository>();
 
             services.AddRazorPages();
 
