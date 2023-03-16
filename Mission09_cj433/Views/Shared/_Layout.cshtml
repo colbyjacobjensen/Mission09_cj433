@@ -6,12 +6,21 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/lib/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 
 <body>
 
+    <!--Added Cart w/ Total in Navbar-->
     <div class="bg-dark text-white p-2">
-        <span class="navbar-brand ml-2">BOOKSTORE</span>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">BOOKSTORE</div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary />
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="row m-1 p-1">
